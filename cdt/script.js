@@ -9,7 +9,7 @@ var zoomLevel = 9;
 function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 5,
-      center: {lat: 40.254169, lng: -121.342649}, // midpoint of cdt
+      center: {lat: 40.836571, lng: -106.778603}, // midpoint of cdt at mile 1514
       mapTypeId: google.maps.MapTypeId.TERRAIN
     });   
 
@@ -49,16 +49,16 @@ function plotDayPoints(dayPoints) {
         if (dayPoints[i][3]) {
         	html += '<strong>' + dayPoints[0][3] + '</strong>: ' + parseFloat(dayPoints[i][3]).toFixed(1) + '<br/>'; // Mileage
         }
-        if (dayPoints[i][4]) {
+        if (dayPoints[i][3]) {
         	html += '<strong>' + dayPoints[0][4] + '</strong>: ' + parseFloat(dayPoints[i][4]).toFixed(1) + '<br/>'; // Expected
         }
-        if (dayPoints[i][5]) {
+        if (dayPoints[i][3]) {
         	html += '<strong>' + dayPoints[0][5] + '</strong>: ' + parseFloat(dayPoints[i][5]).toFixed(1) + '<br/>'; // Banked
         }
-        if (dayPoints[i][6]) {
+        if (dayPoints[i][3]) {
         	html += '<strong>' + dayPoints[0][6] + '</strong>: ' + parseFloat(dayPoints[i][6]).toFixed(1) + '<br/>'; // Daily
         }
-        if (dayPoints[i][7]) {
+        if (dayPoints[i][3]) {
         	html += '<strong>' + dayPoints[0][7] + '</strong>: ' + parseFloat(dayPoints[i][7]).toFixed(1) + '<br/>'; // Average
         }
        	html += '<strong>' + dayPoints[0][8] + '</strong>: ' + dayPoints[i][8] // Comment
