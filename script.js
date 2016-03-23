@@ -24,9 +24,9 @@ function initialize() {
     // look for an auxiliary file to show always along with base route kml
     // then load main file, so it's on top
 
-    gx2 = new google.maps.KmlLayer("cdt2.kml",kmlOptions);     // look for a networked file, and if it exists, show that instead of the main prefix.kml
+    gx2 = new google.maps.KmlLayer("http://1fifoto.com/cdt/cdt2.kml",kmlOptions);     // look for a networked file, and if it exists, show that instead of the main prefix.kml
 
-    gx = new google.maps.KmlLayer("cdt.kml",kmlOptions);
+    gx = new google.maps.KmlLayer("http://1fifoto.com/cdt/cdt.kml",kmlOptions);
 
     var scriptElement = document.createElement('script');
     scriptElement.src = DATA_SERVICE_URL;
