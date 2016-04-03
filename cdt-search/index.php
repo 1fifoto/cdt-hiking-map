@@ -8720,6 +8720,8 @@ array( "MT_Alt_WP2016.gpx" , "SB-275XX" , 48.000958000 , -113.052969000 ),
 $coords = '';
 $closest_filename = '********';
 $closest_waypoint = '********';
+$closest_latitude = '********';
+$closest_longitude = '********';
 
 if ($coords = $_REQUEST['coords']) {
     $latlon = explode(',', $coords);
@@ -8732,6 +8734,8 @@ if ($coords = $_REQUEST['coords']) {
             $shortest_distance = $distance;
             $closest_filename = $waypoint[0];
             $closest_waypoint = $waypoint[1];
+            $closest_latitude = $waypoint[2];
+            $closest_longitude = $waypoint[3];
         }
 
     }
@@ -8747,6 +8751,7 @@ if ($coords = $_REQUEST['coords']) {
 <form>Latitude,Longitude: <input type='text' name='coords' value='<?=$coords?>'/><input type='submit' name="submit"/></form>
 <p>Bear Creek CDT Filename: <?=$closest_filename?></p>
 <p>Bear Creek CDT Waypoint: <?=$closest_waypoint?></p>
+<p>Bear Creek CDT Lat/Lon: <?=$closest_latitude?>,<?=$closest_longitude?></p>
 </body></html>
 
 
