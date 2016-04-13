@@ -46,22 +46,28 @@ function plotDayPoints(dayPoints) {
         var dateParts = dayPoints[i][1].split(" "); // e.g. Wed Apr 16 00:00:00 GMT-07:00 2014
         html += '<strong>' + dayPoints[0][1] + '</strong>: ' + dateParts[0] + ', ' + dateParts[1] + ' ' + dateParts[2] + ', ' + dateParts[5] + '<br/>'; // Date
         html += '<strong>' + dayPoints[0][2] + '</strong>: ' + dayPoints[i][2] + '<br/>'; // Latitude, longitude
-        if (dayPoints[i][3]) {
-        	html += '<strong>' + dayPoints[0][3] + '</strong>: ' + parseFloat(dayPoints[i][3]).toFixed(1) + '<br/>'; // Mileage
+        if (dayPoints[i][3] != "") {
+        	html += '<strong>' + dayPoints[0][3] + '</strong>: ' + dayPoints[i][3] + '<br/>'; // File
         }
-        if (dayPoints[i][3]) {
-        	html += '<strong>' + dayPoints[0][4] + '</strong>: ' + parseFloat(dayPoints[i][4]).toFixed(1) + '<br/>'; // Expected
+        if (dayPoints[i][4] != "") {
+        	html += '<strong>' + dayPoints[0][4] + '</strong>: ' + dayPoints[i][4] + '<br/>'; // Waypoint
         }
-        if (dayPoints[i][3]) {
-        	html += '<strong>' + dayPoints[0][5] + '</strong>: ' + parseFloat(dayPoints[i][5]).toFixed(1) + '<br/>'; // Banked
+        if (dayPoints[i][5] != "") {
+        	html += '<strong>' + dayPoints[0][5] + '</strong>: ' + parseFloat(dayPoints[i][5]).toFixed(1) + '<br/>'; // Actual
         }
-        if (dayPoints[i][3]) {
-        	html += '<strong>' + dayPoints[0][6] + '</strong>: ' + parseFloat(dayPoints[i][6]).toFixed(1) + '<br/>'; // Daily
+        if (dayPoints[i][5] != "") {
+        	html += '<strong>' + dayPoints[0][6] + '</strong>: ' + parseFloat(dayPoints[i][6]).toFixed(1) + '<br/>'; // Expected
         }
-        if (dayPoints[i][3]) {
-        	html += '<strong>' + dayPoints[0][7] + '</strong>: ' + parseFloat(dayPoints[i][7]).toFixed(1) + '<br/>'; // Average
+        if (dayPoints[i][5] != "") {
+        	html += '<strong>' + dayPoints[0][7] + '</strong>: ' + parseFloat(dayPoints[i][7]).toFixed(1) + '<br/>'; // Banked
         }
-       	html += '<strong>' + dayPoints[0][8] + '</strong>: ' + dayPoints[i][8] // Comment
+        if (dayPoints[i][5] != "") {
+        	html += '<strong>' + dayPoints[0][8] + '</strong>: ' + parseFloat(dayPoints[i][8]).toFixed(1) + '<br/>'; // Daily
+        }
+        if (dayPoints[i][5] != "") {
+        	html += '<strong>' + dayPoints[0][9] + '</strong>: ' + parseFloat(dayPoints[i][9]).toFixed(1) + '<br/>'; // Average
+        }
+       	html += '<strong>' + dayPoints[0][10] + '</strong>: ' + dayPoints[i][10] // Comment
         var coords = dayPoints[i][2].split(",");
         var position = {lat: parseFloat(coords[0]), lng: parseFloat(coords[1])};
         path.push(position); // Add position to hiker path
